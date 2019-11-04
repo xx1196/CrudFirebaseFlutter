@@ -1,6 +1,8 @@
 import 'package:crudfirebaseflutter/src/Blocs/LoginBloc.dart';
 import 'package:flutter/material.dart';
 
+export 'package:crudfirebaseflutter/src/Blocs/LoginBloc.dart';
+
 class Provider extends InheritedWidget {
   final loginBloc = LoginBloc;
 
