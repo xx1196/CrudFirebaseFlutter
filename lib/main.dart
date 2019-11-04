@@ -1,6 +1,7 @@
 import 'package:crudfirebaseflutter/src/Blocs/Provider.dart';
 import 'package:crudfirebaseflutter/src/Pages/HomePage.dart';
 import 'package:crudfirebaseflutter/src/Pages/LoginPage.dart';
+import 'package:crudfirebaseflutter/src/Pages/ProductPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -12,10 +13,11 @@ class MyApp extends StatelessWidget {
     final materialApp = MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material app',
-      initialRoute: 'login',
+      initialRoute: 'home',
       routes: {
         'login': (BuildContext context) => LoginPage(),
         'home': (BuildContext context) => HomePage(),
+        'product': (BuildContext context) => ProductPage(),
       },
       theme: ThemeData(primaryColor: Colors.deepPurple),
     );
