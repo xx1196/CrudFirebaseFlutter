@@ -133,7 +133,7 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget _createEmailInput(LoginBloc bloc) {
-    StreamBuilder(
+    return StreamBuilder(
       stream: bloc.emailStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Container(
