@@ -1,10 +1,13 @@
 import 'dart:async';
 
 import 'package:crudfirebaseflutter/src/Blocs/Validators.dart';
+import 'package:rxdart/rxdart.dart';
 
 class LoginBloc with Validators {
-  final _emailController = StreamController<String>.broadcast();
-  final _passwordController = StreamController<String>.broadcast();
+  final _emailController = BehaviorSubject<String>();
+  final _passwordController = BehaviorSubject<String>();
+
+  Stream<bool> get formValidStream => Observable.combineLatest2(emailStream, passwordStream, (es, ps) => true);
 
   Function(String) get changeEmail => _emailController.sink.add;
 
