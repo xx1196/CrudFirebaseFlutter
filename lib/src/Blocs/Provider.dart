@@ -4,9 +4,19 @@ import 'package:flutter/material.dart';
 export 'package:crudfirebaseflutter/src/Blocs/LoginBloc.dart';
 
 class Provider extends InheritedWidget {
-  final loginBloc = LoginBloc;
+  static Provider _instance;
 
-  Provider({Key key, Widget child}) : super(key: key, child: child);
+  factory Provider({Key key, Widget child}) {
+    if (_instance == null) {
+      _instance = new Provider._internal(key: key, child: child);
+    }
+
+    return _instance;
+  }
+
+  Provider._internal({Key key, Widget child}) : super(key: key, child: child);
+
+  final loginBloc = LoginBloc();
 
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) => true;
